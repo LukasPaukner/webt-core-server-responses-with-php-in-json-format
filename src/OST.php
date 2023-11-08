@@ -1,6 +1,7 @@
 <?php
 
 namespace src;
+require "Song.php";
 
 class OST
 {
