@@ -1,5 +1,5 @@
 <?php
-include_once "OST.php";
+namespace src;
 class Seeder {
     private array $ostList;
 
