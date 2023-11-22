@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: application/json");
 include_once "src/includes.php";
 use src\OST;
 use src\Song;
