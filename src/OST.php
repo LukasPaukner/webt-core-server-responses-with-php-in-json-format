@@ -2,7 +2,7 @@
 
 namespace src;
 
-class OST
+class OST implements \JsonSerializable
 {
 
     public function __construct(private int $ID, private string $name, private string $gameName, private string $erscheinungsDatum, private array $trackList)
@@ -47,5 +47,16 @@ class OST
     public function getTrackList(): array
     {
         return $this->trackList;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return array(
+          "ID"=>$this->getID(),
+          "name"=>$this->getName(),
+          "gameName"=>$this->getGameName(),
+          "date"=>$this->getErscheinungsDatum(),
+          "trackList"=>$this->getTrackList()
+        );
     }
 }
