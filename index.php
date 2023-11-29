@@ -18,7 +18,8 @@ $CelesteTrackList = array(
     new Song(3, "Confronting Myself", "Lena Raine", 16, 4),
     new Song(4, "Reach for the Summit", "Lena Raine", 18, 12)
 );
-$s = new Seeder(new OST(1, "Undertale OST", "Undertale", "2015", $UndertaleTrackList),
+$s = new Seeder(
+    new OST(1, "Undertale OST", "Undertale", "2015", $UndertaleTrackList),
     new OST(2, "Celeste OST", "Celeste", "2018", $CelesteTrackList)
 );
 

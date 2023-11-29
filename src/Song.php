@@ -1,7 +1,7 @@
 <?php
 namespace src;
 
-class Song {
+class Song implements \JsonSerializable {
     /**
      * @var int
      */
@@ -123,5 +123,16 @@ class Song {
     public function setDuration(int $duration): void
     {
         $this->duration = $duration;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return array(
+            "ID"=>$this->getUniqueId(),
+            "Name"=>$this->getName(),
+            "Artist"=>$this->getArtist(),
+            "Track number"=>$this->getTrackNumber(),
+            "Duration"=>$this->getDuration()
+        );
     }
 }
