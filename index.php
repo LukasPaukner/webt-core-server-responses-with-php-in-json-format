@@ -43,8 +43,14 @@ $s = new Seeder(
 if($_GET['ost'] === "AllOSTs") {
         echo json_encode($s->getOSTList());
 }else if(isset($_GET['ost'])) {
+    $worked = false;
     foreach ($s->getOSTList() as $ost) {
         if($ost->getName() == $_GET['ost'])
             echo json_encode($ost);
+            $worked = true;
+    }
+
+    if(!$worked) {
+        return array("error" => "Name not Found!");
     }
 }
